@@ -35,6 +35,26 @@ class SinglyLinkedList:
             print("Underflow")
         else:
             self.head = self.head.next
+            
+    def addToTail(self, data):
+        newTail = Node(data)
+        if self.head is None:
+            self.head = newTail
+            self.tail = newTail
+        else:
+            self.tail.next = newTail
+            self.tail = newTail
+    
+    def removeFromTail(self):
+        if self.head is None:
+            print("Underflow")
+        else:
+            temp = self.head
+            while temp.next.next is not None:
+                temp= temp.next
+            prevTail = temp
+            prevTail.next = None
+            self.tail = prevTail
 
 if __name__ =="__main__" :
 
@@ -43,7 +63,11 @@ if __name__ =="__main__" :
     linkedList.addToHead(20)
     linkedList.addToHead(200)
     linkedList.Display()
+    linkedList.addToTail(100)
+    linkedList.addToTail(1020)
     linkedList.removeFromHead()
+    linkedList.Display()
+    linkedList.removeFromTail()
     linkedList.Display()
 
 
