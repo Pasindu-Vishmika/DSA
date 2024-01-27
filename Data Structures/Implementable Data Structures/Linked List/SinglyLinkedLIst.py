@@ -29,12 +29,21 @@ class SinglyLinkedList:
                 print (temp.data , end=" ")
                 temp=temp.next
         print()
+    
+    def removeFromHead(self):
+        if self.head is None:
+            print("Underflow")
+        else:
+            self.head = self.head.next
 
 if __name__ =="__main__" :
 
     linkedList = SinglyLinkedList()
     linkedList.addToHead(10)
     linkedList.addToHead(20)
+    linkedList.addToHead(200)
+    linkedList.Display()
+    linkedList.removeFromHead()
     linkedList.Display()
 
 
