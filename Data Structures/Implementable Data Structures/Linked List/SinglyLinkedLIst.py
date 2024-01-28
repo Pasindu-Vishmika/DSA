@@ -55,6 +55,56 @@ class SinglyLinkedList:
             prevTail = temp
             prevTail.next = None
             self.tail = prevTail
+            
+    def search(self,loc):
+        temp = self.head
+        while temp is not None:
+            if temp.data == loc:
+                return temp
+            temp=temp.next
+        return -1
+            
+    def insertAfterNode(self,loc,data):
+        if self.search(loc) == -1:
+            print(f"Node '{loc}' not existed in the LinkedList")
+        else:
+            currentNode = self.search(loc)
+            newNode = Node(data)
+            newNode.next =currentNode.next
+            currentNode.next = newNode
+            
+    def DisplayElementsCount(self):
+        count = 0 
+        if self.isEmpty():
+            print("This list was empty")
+        else:
+            temp= self.head
+            while temp is not None:
+                count +=1
+                temp= temp.next
+            print(f"There are {count} elements in this LinkedList")
+            
+    def removeAfterNode(self,loc):
+        if self.search(loc) == -1:
+            print(f"Node '{loc}' not existed in the LinkedList")
+        else:
+            currentNode = self.search(loc)
+            currentNode.next = currentNode.next.next
+            
+    def removeNode (self, loc):
+        if self.search(loc) == -1:
+            print(f"Node '{loc}' not existed in the LinkedList")
+        else:
+            temp= self.head
+            while temp is not None:
+                if self.head.data == loc:
+                    self.removeFromHead()
+                    break
+                elif temp.next.data == loc:
+                    temp.next = temp.next.next
+                    break
+                temp= temp.next
+                    
 
 if __name__ =="__main__" :
 
@@ -64,10 +114,19 @@ if __name__ =="__main__" :
     linkedList.addToHead(200)
     linkedList.Display()
     linkedList.addToTail(100)
+    linkedList.addToTail(10200)
+    linkedList.addToTail(102000)
     linkedList.addToTail(1020)
     linkedList.removeFromHead()
     linkedList.Display()
     linkedList.removeFromTail()
+    linkedList.insertAfterNode(100,500)
     linkedList.Display()
+    linkedList.removeAfterNode(10)
+    linkedList.Display()
+    linkedList.DisplayElementsCount()
+    linkedList.removeNode(10)
+    linkedList.Display()
+    
 
 
