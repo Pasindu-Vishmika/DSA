@@ -42,6 +42,7 @@ class SinglyLinkedList {
                 System.out.print(temp.data + "  ");
                 temp = temp.next;
             }
+            System.out.println();
         }
     }
 
