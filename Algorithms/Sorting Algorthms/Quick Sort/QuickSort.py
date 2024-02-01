@@ -39,6 +39,7 @@ if __name__=="__main__":
     
     print("old array    ->  " ,end="")
     QSort.displayArray(array)
+    
     QSort.quickSort(array,lb,ub)
     print("sorted array ->  ",end="")
     QSort.displayArray(array)
