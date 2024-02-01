@@ -12,7 +12,6 @@ class QuickSort{
         DisplayElements(array);
     }
 
-
     static void DisplayElements(int arr []){
         for(int i : arr){
             System.out.print( i + " ");
