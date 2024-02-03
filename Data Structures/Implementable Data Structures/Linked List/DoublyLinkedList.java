@@ -53,5 +53,17 @@ class DoublyLinkedList{
         System.out.println();
     }
 
+    public void addToTail (Object ele){
+        Node newTail = new Node(ele);
+        if (isEmpty()){
+            head = newTail;
+            tail = newTail;
+        }else{
+            newTail.prev = tail;
+            newTail.next = null;
+            tail.next = newTail;
+            tail = newTail;
+        }
+    }
 
 }
