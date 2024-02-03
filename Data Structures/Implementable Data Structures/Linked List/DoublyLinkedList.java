@@ -27,6 +27,7 @@ class DoublyLinkedList{
         linkedList.DisplayElements();
         linkedList.deleteFromTail();
         linkedList.DisplayElements();
+        System.out.println(linkedList.count() + " elements in this linkedList");
     }
 
     Node head ;
@@ -84,6 +85,19 @@ class DoublyLinkedList{
             tail = tail.prev;
             tail.next = null;
         }
+    }
+
+
+    public int count (){
+        int count = 0;
+        if (isEmpty()){
+            return count;
+        }else{
+            for (Node temp =head ; temp!=null;temp=temp.next){
+                count++;
+            }
+        }
+        return count;
     }
 
 }
