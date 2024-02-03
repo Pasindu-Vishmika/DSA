@@ -25,6 +25,8 @@ class DoublyLinkedList{
         linkedList.DisplayElements();
         linkedList.deleteFromHead();
         linkedList.DisplayElements();
+        linkedList.deleteFromTail();
+        linkedList.DisplayElements();
     }
 
     Node head ;
@@ -73,6 +75,14 @@ class DoublyLinkedList{
         }else{
             head = head.next;
             head.prev = null;
+        }
+    }
+    public void deleteFromTail(){
+        if (isEmpty()){
+            System.out.println("UnderFlow");
+        }else{
+            tail = tail.prev;
+            tail.next = null;
         }
     }
 
