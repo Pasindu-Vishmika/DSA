@@ -2,15 +2,16 @@ import java.util.Scanner;
 
 public class BinarySearch {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int array [] = { 1,2,3,4,5,6,7,8,9,10} ;
-        System.out.print("enter key to find => ");
-        int key = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            int array [] = { 1,2,3,4,5,6,7,8,9,10} ;
+            System.out.print("enter key to find => ");
+            int key = sc.nextInt();
 
-        if (Bsearch ( key ,array) == -1){
-            System.out.println("Key Not found.");
-        }else{
-            System.out.println("key founded in " + Bsearch(key,array));
+            if (Bsearch ( key ,array) == -1){
+                System.out.println("Key Not found.");
+            }else{
+                System.out.println("key founded in " + Bsearch(key,array));
+            }
         }
 
     }
