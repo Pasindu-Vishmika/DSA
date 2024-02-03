@@ -28,6 +28,8 @@ class DoublyLinkedList {
         linkedList.DisplayElements();
         linkedList.insertAfter(100, 500);
         linkedList.DisplayElements();
+        linkedList.deleteAfter(10);
+        linkedList.DisplayElements();
         System.out.println(linkedList.count() + " elements in this linkedList");
     }
 
@@ -139,5 +141,14 @@ class DoublyLinkedList {
             temp = temp.next;
         }
         return temp;
+    }
+    public void deleteAfter (int loc){
+        Node currNode = searchNode(loc);
+        if (currNode == null ){
+            System.out.println("The node " + loc + " not found");
+        }else{
+            currNode.next = currNode.next.next;
+            currNode.next.next.prev = currNode;
+        }
     }
 }
