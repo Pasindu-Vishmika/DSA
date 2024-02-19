@@ -1,20 +1,20 @@
 class Node {
-    Object data;
+    int data;
     Node next;
 
-    public Node (Object data){
+    public Node (int data){
         this.data = data ;
         this.next = null;
     }
 
-    public Node (Object data, Node next){
+    public Node (int data, Node next){
         this.data = data;
         this.next = next;
 
     }
 }
 
-class SinglyLinkedList {
+public class SinglyLinkedList {
     Node head ;
     Node tail ;
 
@@ -22,7 +22,7 @@ class SinglyLinkedList {
         return head == null ; 
     }
 
-    public void addToHead (Object elements){
+    public void addToHead(int elements){
         Node newHead = new Node(elements);
         if (isEmpty()){
             head = newHead;
@@ -32,8 +32,9 @@ class SinglyLinkedList {
             head = newHead;
         }  
     }
+    
 
-    public void addToTail (Object elements){
+    public void addToTail (int elements){
         Node newTail = new Node(elements);
         if (isEmpty()){
             head = newTail;
@@ -43,6 +44,7 @@ class SinglyLinkedList {
             tail = newTail;
         }
     }
+
     public void printElement (){
         if (isEmpty()){
             System.out.println("Undeflow");
@@ -60,8 +62,9 @@ class SinglyLinkedList {
         
         SinglyLinkedList LinkedList = new SinglyLinkedList();
         LinkedList.addToHead(10);
-        LinkedList.addToHead("abc");
         LinkedList.addToHead(100);
+        LinkedList.printElement();
+        LinkedList.addToTail(1000);
         LinkedList.printElement();
     }
 }
