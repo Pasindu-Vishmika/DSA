@@ -33,6 +33,16 @@ class SinglyLinkedList {
         }  
     }
 
+    public void addToTail (Object elements){
+        Node newTail = new Node(elements);
+        if (isEmpty()){
+            head = newTail;
+            tail = newTail;
+        }else {
+            tail.next = newTail;
+            tail = newTail;
+        }
+    }
     public void printElement (){
         if (isEmpty()){
             System.out.println("Undeflow");
